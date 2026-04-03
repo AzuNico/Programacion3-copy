@@ -1,8 +1,8 @@
 package ProgramacionIII.tp1;
 
-import java.util.Arrays;
+import ProgramacionIII.Ejercicio;
 
-public class Ejercicio5 {
+public class Ejercicio5 extends Ejercicio {
 
     public enum Inciso {
         A,
@@ -10,9 +10,7 @@ public class Ejercicio5 {
     }
 
     public Ejercicio5() {
-        System.out.println("*********************");
-        System.out.println("EJERCICIO 5");
-        System.out.println("*********************");
+        super(5);
     }
 
     public void ejecutar(Inciso inciso) {
@@ -45,7 +43,7 @@ public class Ejercicio5 {
         System.out.println("Lista 1 (desordenada): " + lista1);
         System.out.println("Lista 2 (desordenada): " + lista2);
 
-        MySimpleLinkedList<Integer> resultado = ListUtils.intersectUnordered(lista1, lista2);
+        MySimpleLinkedList<Integer> resultado = ListUtils.mergeUnordered(lista1, lista2);
         System.out.println("Interseccion (ordenada): " + resultado);
     }
 
@@ -68,7 +66,7 @@ public class Ejercicio5 {
         System.out.println("Lista 1 (ordenada): " + lista1Ord);
         System.out.println("Lista 2 (ordenada): " + lista2Ord);
 
-        MySimpleLinkedList<Integer> resultado = ListUtils.intersectOrdered(lista1Ord, lista2Ord);
+        MySimpleLinkedList<Integer> resultado = ListUtils.mergeOrdered(lista1Ord, lista2Ord);
         System.out.println("Interseccion (ordenada): " + resultado);
     }
 }

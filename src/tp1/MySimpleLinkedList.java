@@ -5,17 +5,34 @@ import java.util.Iterator;
 public class MySimpleLinkedList<T> implements Iterable<T> {
 
     private Node<T> first;
+    private Node<T> last;
     private int size;
 
     public MySimpleLinkedList() {
         this.first = null;
+        this.last = null;
         this.size = 0;
     }
 
     public void insertFront(T info) {
-        Node<T> tmp = new Node<T>(info, null);
-        tmp.setNext(this.first);
-        this.first = tmp;
+        Node<T> nuevo = new Node<T>(info, null);
+        nuevo.setNext(this.first);
+        this.first = nuevo;
+        if (last == null) {
+            this.last = nuevo;
+        }
+        this.size++;
+    }
+
+    public void insertBack(T info) {
+        Node<T> nuevo = new Node<>(info, null);
+        if (isEmpty()) {
+            first = nuevo;
+        } else {
+            last.setNext(nuevo);
+        }
+        last = nuevo;
+
         this.size++;
     }
 
